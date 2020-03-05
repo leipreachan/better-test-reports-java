@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3baeb84a-f57d-465e-94eb-92d3a30b3ddb" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1YQwb4R40RbbkX64TkAW7LqLYpl" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
+    <property name="last.edited.regexp" value="http://mainci.msk:8111/repository/download/BadooWebApplicationSelenium_BillingTests_DevBuildChromeSpotUsers/2784800:id/2020-02-25-14-37-25-667_ServicesPaymentsTest_testChatUnblockerForGift_with_data_set__CC_initial_3ds_Maestro__s0_w0.png" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/betterTestReports-server/src/main/resources/buildServerResources" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/betterTestReports-server/src/main/resources/buildServerResources/css" />
+      <recent name="$PROJECT_DIR$/betterTestReports-server/src/main/resources/buildServerResources/js" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="dev.magiclab.qa.betterTestReports" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/betterTestReports-server/src/main/resources/buildServerResources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Remote.remote">
+    <configuration name="Scratch" type="Java Scratch" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Scratch" />
+      <option name="SCRATCH_FILE_URL" value="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="remote" type="Remote">
+      <module name="betterTestReports-server" />
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5555" />
+      <option name="AUTO_RESTART" value="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="5555" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Java Scratch.Scratch" />
+      <item itemvalue="Remote.remote" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Java Scratch.Scratch" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="showServicesTree" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3baeb84a-f57d-465e-94eb-92d3a30b3ddb" name="Default Changelist" comment="" />
+      <created>1582888193874</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582888193874</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2350" y="751" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582905844210">
+      <screen x="924" y="27" width="2916" height="2133" />
+    </state>
+    <state x="2350" y="751" key="#com.intellij.execution.impl.EditConfigurationsDialog/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1582905844210" />
+    <state x="1753" y="681" width="374" height="584" key="#com.intellij.ide.util.MemberChooser" timestamp="1583408411796">
+      <screen x="924" y="27" width="2916" height="2133" />
+    </state>
+    <state x="1753" y="681" width="374" height="584" key="#com.intellij.ide.util.MemberChooser/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583408411796" />
+    <state x="2182" y="842" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583409246119">
+      <screen x="924" y="27" width="2916" height="2133" />
+    </state>
+    <state x="2182" y="842" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583409246119" />
+    <state width="478" height="568" key="DebuggerActiveHint" timestamp="1582905883413">
+      <screen x="924" y="27" width="2916" height="2133" />
+    </state>
+    <state width="478" height="568" key="DebuggerActiveHint/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1582905883413" />
+    <state x="2675" y="851" width="424" height="491" key="FileChooserDialogImpl" timestamp="1582910404639">
+      <screen x="924" y="27" width="2916" height="2133" />
+    </state>
+    <state x="2675" y="851" width="424" height="491" key="FileChooserDialogImpl/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1582910404639" />
+    <state width="1849" height="839" key="GridCell.Tab.0.bottom" timestamp="1583426401168">
+      <screen x="924" y="27" width="2916" height="2133" />
+    </state>
+    <state width="1849" height="839" key="GridCell.Tab.0.bottom/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583426401168" />
+    <state width="1849" height="839" key="GridCell.Tab.0.center" timestamp="1583426401167">
+      <screen x="924" y="27" width="2916" height="2133" />
+    </state>
+    <state width="1849" height="839" key="GridCell.Tab.0.center/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583426401167" />
+    <state width="1849" height="839" key="GridCell.Tab.0.left" timestamp="1583426401167">
+      <screen x="924" y="27" width="2916" height="2133" />
+    </state>
+    <state width="1849" height="839" key="GridCell.Tab.0.left/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583426401167" />
+    <state width="1849" height="839" key="GridCell.Tab.0.right" timestamp="1583426401168">
+      <screen x="924" y="27" width="2916" height="2133" />
+    </state>
+    <state width="1849" height="839" key="GridCell.Tab.0.right/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583426401168" />
+    <state width="1849" height="839" key="GridCell.Tab.1.bottom" timestamp="1583426401169">
+      <screen x="924" y="27" width="2916" height="2133" />
+    </state>
+    <state width="1849" height="839" key="GridCell.Tab.1.bottom/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583426401169" />
+    <state width="1849" height="839" key="GridCell.Tab.1.center" timestamp="1583426401168">
+      <screen x="924" y="27" width="2916" height="2133" />
+    </state>
+    <state width="1849" height="839" key="GridCell.Tab.1.center/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583426401168" />
+    <state width="1849" height="839" key="GridCell.Tab.1.left" timestamp="1583426401168">
+      <screen x="924" y="27" width="2916" height="2133" />
+    </state>
+    <state width="1849" height="839" key="GridCell.Tab.1.left/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583426401168" />
+    <state width="1849" height="839" key="GridCell.Tab.1.right" timestamp="1583426401169">
+      <screen x="924" y="27" width="2916" height="2133" />
+    </state>
+    <state width="1849" height="839" key="GridCell.Tab.1.right/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583426401169" />
+    <state x="1982" y="751" width="924" height="691" key="Maven.ArtifactSearchDialog" timestamp="1583321852645">
+      <screen x="924" y="27" width="2916" height="2133" />
+    </state>
+    <state x="1982" y="751" width="924" height="691" key="Maven.ArtifactSearchDialog/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583321852645" />
+    <state x="1428" y="547" width="1024" height="852" key="SettingsEditor" timestamp="1582895586851">
+      <screen x="924" y="27" width="2916" height="2133" />
+    </state>
+    <state x="1428" y="547" width="1024" height="852" key="SettingsEditor/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1582895586851" />
+    <state x="2178" y="824" width="639" height="524" key="StructurePopup" timestamp="1583414568743">
+      <screen x="924" y="27" width="2916" height="2133" />
+    </state>
+    <state x="2178" y="824" width="639" height="524" key="StructurePopup/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583414568743" />
+    <state width="533" height="446" key="SwitcherDM" timestamp="1583332201218">
+      <screen x="924" y="27" width="2916" height="2133" />
+    </state>
+    <state width="533" height="446" key="SwitcherDM/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583332201218" />
+    <state width="1285" height="1066" key="XDebugger.FullValuePopup" timestamp="1582903965888">
+      <screen x="924" y="27" width="2916" height="2133" />
+    </state>
+    <state width="1285" height="1066" key="XDebugger.FullValuePopup/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1582903965888" />
+    <state x="1590" y="681" width="752" height="576" key="find.popup" timestamp="1583415886108">
+      <screen x="924" y="27" width="2916" height="2133" />
+    </state>
+    <state x="1590" y="681" width="752" height="576" key="find.popup/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583415886108" />
+    <state width="742" height="392" key="javadoc.popup.new" timestamp="1583426304229">
+      <screen x="924" y="27" width="2916" height="2133" />
+    </state>
+    <state width="742" height="392" key="javadoc.popup.new/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583426304229" />
+    <state x="2556" y="522" key="run.anything.popup" timestamp="1582900721276">
+      <screen x="924" y="27" width="2916" height="2133" />
+    </state>
+    <state x="2556" y="522" key="run.anything.popup/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1582900721276" />
+    <state x="2555" y="529" width="672" height="678" key="search.everywhere.popup" timestamp="1582911668856">
+      <screen x="924" y="27" width="2916" height="2133" />
+    </state>
+    <state x="2555" y="529" width="672" height="678" key="search.everywhere.popup/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1582911668856" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/betterTestReports-server/src/main/java/dev/magiclab/qa/betterTestReports/TestOutputFormatController.java</url>
+          <line>93</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
