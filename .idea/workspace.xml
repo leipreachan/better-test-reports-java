@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3baeb84a-f57d-465e-94eb-92d3a30b3ddb" name="Default Changelist" comment="" />
+    <list default="true" id="3baeb84a-f57d-465e-94eb-92d3a30b3ddb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/betterTestReports-server/betterTestReports-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/betterTestReports-server/betterTestReports-server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/betterTestReports-server/src/main/java/dev/magiclab/qa/betterTestReports/TestOutputFormatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/betterTestReports-server/src/main/java/dev/magiclab/qa/betterTestReports/TestOutputFormatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/betterTestReports-server/target/betterTestReports-server-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/betterTestReports-server/target/betterTestReports-server-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/betterTestReports-server/target/classes/dev/magiclab/qa/betterTestReports/TestOutputFormatController.class" beforeDir="false" afterPath="$PROJECT_DIR$/betterTestReports-server/target/classes/dev/magiclab/qa/betterTestReports/TestOutputFormatController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/betterTestReports.iml" beforeDir="false" afterPath="$PROJECT_DIR$/betterTestReports.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/build/build.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/target/teamcity-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/target/teamcity-plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/betterTestReports.zip" beforeDir="false" afterPath="$PROJECT_DIR$/target/betterTestReports.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teamcity-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/teamcity-plugin.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +27,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -22,6 +38,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1YQwb4R40RbbkX64TkAW7LqLYpl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -38,15 +55,15 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/betterTestReports-server/src/main/resources/buildServerResources/css" />
-      <recent name="$PROJECT_DIR$/betterTestReports-server/src/main/resources/buildServerResources/js" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/betterTestReports-server/src/main/resources/buildServerResources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="dev.magiclab.qa.betterTestReports" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/betterTestReports-server/src/main/resources/buildServerResources" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/betterTestReports-server/src/main/resources/buildServerResources/css" />
+      <recent name="$PROJECT_DIR$/betterTestReports-server/src/main/resources/buildServerResources/js" />
     </key>
   </component>
   <component name="RunManager" selected="Remote.remote">
@@ -118,38 +135,38 @@
       <screen x="924" y="27" width="2916" height="2133" />
     </state>
     <state x="2675" y="851" width="424" height="491" key="FileChooserDialogImpl/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1582910404639" />
-    <state width="1849" height="839" key="GridCell.Tab.0.bottom" timestamp="1583426401168">
+    <state width="1849" height="839" key="GridCell.Tab.0.bottom" timestamp="1583490293999">
       <screen x="924" y="27" width="2916" height="2133" />
     </state>
-    <state width="1849" height="839" key="GridCell.Tab.0.bottom/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583426401168" />
-    <state width="1849" height="839" key="GridCell.Tab.0.center" timestamp="1583426401167">
+    <state width="1849" height="839" key="GridCell.Tab.0.bottom/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583490293999" />
+    <state width="1849" height="839" key="GridCell.Tab.0.center" timestamp="1583490293999">
       <screen x="924" y="27" width="2916" height="2133" />
     </state>
-    <state width="1849" height="839" key="GridCell.Tab.0.center/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583426401167" />
-    <state width="1849" height="839" key="GridCell.Tab.0.left" timestamp="1583426401167">
+    <state width="1849" height="839" key="GridCell.Tab.0.center/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583490293999" />
+    <state width="1849" height="839" key="GridCell.Tab.0.left" timestamp="1583490293999">
       <screen x="924" y="27" width="2916" height="2133" />
     </state>
-    <state width="1849" height="839" key="GridCell.Tab.0.left/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583426401167" />
-    <state width="1849" height="839" key="GridCell.Tab.0.right" timestamp="1583426401168">
+    <state width="1849" height="839" key="GridCell.Tab.0.left/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583490293999" />
+    <state width="1849" height="839" key="GridCell.Tab.0.right" timestamp="1583490293999">
       <screen x="924" y="27" width="2916" height="2133" />
     </state>
-    <state width="1849" height="839" key="GridCell.Tab.0.right/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583426401168" />
-    <state width="1849" height="839" key="GridCell.Tab.1.bottom" timestamp="1583426401169">
+    <state width="1849" height="839" key="GridCell.Tab.0.right/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583490293999" />
+    <state width="1849" height="839" key="GridCell.Tab.1.bottom" timestamp="1583490305297">
       <screen x="924" y="27" width="2916" height="2133" />
     </state>
-    <state width="1849" height="839" key="GridCell.Tab.1.bottom/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583426401169" />
-    <state width="1849" height="839" key="GridCell.Tab.1.center" timestamp="1583426401168">
+    <state width="1849" height="839" key="GridCell.Tab.1.bottom/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583490305297" />
+    <state width="1849" height="839" key="GridCell.Tab.1.center" timestamp="1583490305297">
       <screen x="924" y="27" width="2916" height="2133" />
     </state>
-    <state width="1849" height="839" key="GridCell.Tab.1.center/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583426401168" />
-    <state width="1849" height="839" key="GridCell.Tab.1.left" timestamp="1583426401168">
+    <state width="1849" height="839" key="GridCell.Tab.1.center/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583490305297" />
+    <state width="1849" height="839" key="GridCell.Tab.1.left" timestamp="1583490305297">
       <screen x="924" y="27" width="2916" height="2133" />
     </state>
-    <state width="1849" height="839" key="GridCell.Tab.1.left/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583426401168" />
-    <state width="1849" height="839" key="GridCell.Tab.1.right" timestamp="1583426401169">
+    <state width="1849" height="839" key="GridCell.Tab.1.left/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583490305297" />
+    <state width="1849" height="839" key="GridCell.Tab.1.right" timestamp="1583490305297">
       <screen x="924" y="27" width="2916" height="2133" />
     </state>
-    <state width="1849" height="839" key="GridCell.Tab.1.right/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583426401169" />
+    <state width="1849" height="839" key="GridCell.Tab.1.right/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583490305297" />
     <state x="1982" y="751" width="924" height="691" key="Maven.ArtifactSearchDialog" timestamp="1583321852645">
       <screen x="924" y="27" width="2916" height="2133" />
     </state>
@@ -170,14 +187,18 @@
       <screen x="924" y="27" width="2916" height="2133" />
     </state>
     <state width="1285" height="1066" key="XDebugger.FullValuePopup/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1582903965888" />
+    <state x="765" y="1013" width="454" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583488915385">
+      <screen x="924" y="27" width="2916" height="2133" />
+    </state>
+    <state x="765" y="1013" width="454" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583488915385" />
     <state x="1590" y="681" width="752" height="576" key="find.popup" timestamp="1583415886108">
       <screen x="924" y="27" width="2916" height="2133" />
     </state>
     <state x="1590" y="681" width="752" height="576" key="find.popup/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583415886108" />
-    <state width="742" height="392" key="javadoc.popup.new" timestamp="1583426304229">
+    <state width="742" height="392" key="javadoc.popup.new" timestamp="1583491915621">
       <screen x="924" y="27" width="2916" height="2133" />
     </state>
-    <state width="742" height="392" key="javadoc.popup.new/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583426304229" />
+    <state width="742" height="392" key="javadoc.popup.new/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1583491915621" />
     <state x="2556" y="522" key="run.anything.popup" timestamp="1582900721276">
       <screen x="924" y="27" width="2916" height="2133" />
     </state>
@@ -186,16 +207,5 @@
       <screen x="924" y="27" width="2916" height="2133" />
     </state>
     <state x="2555" y="529" width="672" height="678" key="search.everywhere.popup/874.2160.1920.1080/924.27.2916.2133@924.27.2916.2133" timestamp="1582911668856" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/betterTestReports-server/src/main/java/dev/magiclab/qa/betterTestReports/TestOutputFormatController.java</url>
-          <line>93</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

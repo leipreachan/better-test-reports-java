@@ -1,5 +1,6 @@
 package dev.magiclab.qa.betterTestReports;
 
+import org.apache.commons.lang3.StringUtils;
 import jetbrains.buildServer.controllers.BaseController;
 import jetbrains.buildServer.serverSide.FailedTestOutputBean;
 import jetbrains.buildServer.serverSide.SBuild;
@@ -36,7 +37,7 @@ public class TestOutputFormatController extends BaseController implements jetbra
                     "<a href=\"$1\" target=\"_blank\">$1</a>$2"
             },
             {
-                    ">>(.+?)<<",
+                    "&gt;&gt;(.+?)&lt;&lt;",
                     "&gt;&gt;<code data-type='square-brackets'>$1</code>&lt;&lt;",
             },
             {
@@ -90,6 +91,7 @@ public class TestOutputFormatController extends BaseController implements jetbra
 
     private String replaceWithRegexRules(String output) {
         String result = output;
+        result = StringUtils.replaceEach(result, new String[]{"&", "\"", "<", ">"}, new String[]{"&amp;", "&quot;", "&lt;", "&gt;"});
         for (String[] transform : TRANSFORMS) {
             String regex = transform[0];
             String test = "";
