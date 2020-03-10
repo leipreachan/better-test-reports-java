@@ -1,3 +1,4 @@
-betterTestReports-server/target/
-build/target/
 .idea/
+betterTestReports-server/
+build/
+target/
