@@ -44,6 +44,15 @@ a.better-preview:hover {
     padding: 2px;
 }
 
+#popupPin {
+    position: absolute;
+    visibility: hidden;
+    width: 15px;
+    height: 15px;
+    stroke: rgb(172, 172, 172);
+    fill: rgb(172, 172, 172);
+}
+
 #betterPopup {
     position: absolute;
     visibility: hidden;
@@ -85,6 +94,10 @@ a.better-preview:hover {
     display:block;
     width:100%;
     height:15px;
+}
+
+.sparkline-wrapper text {
+    cursor: pointer;
 }
 
 [data-type='sparkline'] {

@@ -95,12 +95,16 @@ function draw_sparkline() {
     function showPopup(event)
     {
         debug('hover event', event);
-        let popup;
-        if (typeof document.sparklinepopup === 'undefined') {
+        let popup, eventx = event.pageX;
+        if (typeof document.sparklinePopup === 'undefined') {
+            pin = document.body.appendChild(attrs(document.createElement('div'),{id: 'popupPin'}));
             popup = document.body.appendChild(attrs(document.createElement('div'),{id: 'betterPopup'}));
-            document.sparklinepopup = popup;
+            document.sparkPin = pin;
+            document.sparklinePopup = popup;
+            pin.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" height="100%" width="100%"><ellipse cy="5" rx="2" ry="2" cx="10"/><ellipse cy="17" rx="3" ry="3" cx="10"/><line x1="10" y1="20" x2="10" y2="5"></line></svg>';
         } else {
-            popup = document.sparklinepopup;
+            pin = document.sparkPin;
+            popup = document.sparklinePopup;
             popup.innerHTML = '';
         }
 
@@ -118,27 +122,34 @@ function draw_sparkline() {
 //        popup.innerHTML += '<svg><path fill-rule="evenodd" d="M6.997 0A6.995 6.995 0 0 0 0 7c0 3.867 3.129 7 6.997 7a7.001 7.001 0 1 0 0-14zM7 12.6A5.598 5.598 0 0 1 1.4 7c0-3.094 2.506-5.6 5.6-5.6s5.6 2.506 5.6 5.6-2.506 5.6-5.6 5.6zm.35-9.1H6.3v4.2l3.672 2.205.528-.861-3.15-1.869V3.5z"></path></svg>' + this.duration;
 
         let boundingClientRect = event.target.getBoundingClientRect();
-        const top = boundingClientRect.top + boundingClientRect.height + window.scrollY + 10,
-            left = (event.pageX - popup.offsetWidth / 2);
+        const top = boundingClientRect.top + boundingClientRect.height + window.scrollY + 13,
+            left = (eventx - popup.offsetWidth / 2);
         popup.style.top = top + 'px';
         popup.style.left = (left > 5 ? left : 5) + 'px';
+        const
+            pinTop = boundingClientRect.top + boundingClientRect.height + window.scrollY;
+            pinLeft = boundingClientRect.left + boundingClientRect.width/2 - pin.getBoundingClientRect().width/2 + window.scrollX;
+        pin.style.top = `${pinTop}px`;
+        pin.style.left = `${pinLeft}px`;
 
         popup.onmouseover = () => {
-            window.clearTimeout(document.sparklinepopuptimeout);
+            window.clearTimeout(document.sparklinePopupTimeout);
         };
         popup.onmouseout = hidePopup;
 
-        document.sparklinepopuptimeout = window.setTimeout(() => {
-            if (document.sparklinepopuptimeout) window.clearTimeout(document.sparklinepopuptimeout);
-            document.sparklinepopup.style.visibility = 'visible';
+        document.sparklinePopupTimeout = window.setTimeout(() => {
+            if (document.sparklinePopupTimeout) window.clearTimeout(document.sparklinePopupTimeout);
+            document.sparklinePopup.style.visibility = 'visible';
+            document.sparkPin.style.visibility = 'visible';
         }, 200);
     }
 
     function hidePopup()
     {
-        window.clearTimeout(document.sparklinepopuptimeout);
-        document.sparklinepopuptimeout = window.setTimeout(() => {
-            document.sparklinepopup.style.visibility = 'hidden';
+        window.clearTimeout(document.sparklinePopupTimeout);
+        document.sparklinePopupTimeout = window.setTimeout(() => {
+            document.sparklinePopup.style.visibility = 'hidden';
+            document.sparkPin.style.visibility = 'hidden';
         }, 200);
     }
 
@@ -155,9 +166,8 @@ function draw_sparkline() {
     function addRectangles(xmlTestResult, currentBuildId, svgNode, title = '') {
         const step = 5, width = 5, testResults = Array.from(xmlTestResult.getElementsByTagName('testOccurrence'));
         let x = 0, success = 0, titleBuildType;
-        for (let i in testResults) {
-            const item = testResults[i],
-                value = item.hasAttribute('status') ? item.attributes.status.nodeValue : '',
+        for (let item of testResults) {
+            const value = item.hasAttribute('status') ? item.attributes.status.nodeValue : '',
                 duration = item.hasAttribute('duration') ? item.attributes.duration.nodeValue : false,
                 buildInfo = item.getElementsByTagName('build')[0],
                 buildTypeName = item.getElementsByTagName('buildType')[0].attributes.name.nodeValue,
@@ -234,9 +244,9 @@ function draw_sparkline() {
         if (this.firstChild) this.removeChild(this.firstChild);
 
         if (this.globalStat) {
-            drawSVGFromUrl(this, testResultsUrl, 'Success rate');
+            drawSVGFromUrl(this, testResultsUrl, 'Success rate (across all runs)');
         } else {
-            drawSVGFromUrl(this, `${testResultsUrl},buildType:${buildType}`, 'Success rate (configuration)');
+            drawSVGFromUrl(this, `${testResultsUrl},buildType:${buildType}`, 'Success rate (this configuration)');
         }
 
         this.globalStat = !this.globalStat;
@@ -253,11 +263,8 @@ function draw_sparkline() {
         return;
     }
 
-    const nodes = Array.from(stacktraces);
-
     debug('sparkline');
-    for (let index in nodes) {
-        let item = nodes[index];
+    for (let item of stacktraces) {
         let matches = /fullStacktrace_\d+_([\d-]+)/.exec(item.id);
         let testId = matches[1];
         item.dataset.sparkline = testId;
