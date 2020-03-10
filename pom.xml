@@ -19,9 +19,12 @@
   </properties>
   <repositories>
       <repository>
-          <id>Central Maven repository</id>
-          <name>Central Maven repository</name>
-          <url>https://repo1.maven.org/maven2/</url>
+          <snapshots>
+              <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>Central Repository</name>
+          <url>https://repo.maven.apache.org/maven2</url>
       </repository>
       <repository>
         <id>JetBrains</id>
@@ -29,6 +32,17 @@
     </repository>
   </repositories>
   <pluginRepositories>
+      <pluginRepository>
+          <releases>
+              <updatePolicy>never</updatePolicy>
+          </releases>
+          <snapshots>
+              <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>Central Repository</name>
+          <url>https://repo.maven.apache.org/maven2</url>
+      </pluginRepository>
       <pluginRepository>
           <id>JetBrains</id>
           <url>https://download.jetbrains.com/teamcity-repository</url>
