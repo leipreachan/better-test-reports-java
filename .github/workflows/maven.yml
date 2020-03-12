@@ -28,4 +28,5 @@ jobs:
       run: mkdir staging && cp target/*.zip staging    
     - uses: actions/upload-artifact@v1    
       with:
+        name: betterTestReports-zipped
         path: staging
