@@ -28,5 +28,5 @@ jobs:
       run: mkdir staging && cp target/*.zip staging    
     - uses: actions/upload-artifact@v1    
       with:
-        name: betterTestReports-${{ GITHUB_RUN_NUMBER }}.zip
+        name: betterTestReports-${{ github.run_id }}.zip
         path: staging
