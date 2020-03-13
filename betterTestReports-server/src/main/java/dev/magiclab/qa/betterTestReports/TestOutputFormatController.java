@@ -49,7 +49,7 @@ public class TestOutputFormatController extends BaseController implements jetbra
                     "<code data-type='docker'>$1</code>\n",
             },
             {
-                    "((?:bundle.exec |APP=|APP_BUNDLE_PATH=).+?)(?:\n|<br>)",
+                    "((?:bundle.exec |TEST_APP=|APP=|APP_BUNDLE_PATH=).+?)(?:\n|<br>)",
                     "<code data-type='bundle_exec_app'>$1</code>\n",
             },
             {
