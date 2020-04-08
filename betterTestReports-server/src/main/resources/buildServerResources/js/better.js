@@ -460,9 +460,7 @@ function transform_mutated_nodes() {
 }
 
 function main() {
-    const
-        allFailedTests = document.getElementById('tst_group_build_fail'),
-        allMutedTests = document.getElementById('tst_group_build_muteRefresh');
+    const allFailedTests = document.getElementById('buildResults');
     let observer = new MutationObserver((mutations) => {
                 loader();
                 mutations.forEach((mutation) => {
@@ -473,9 +471,6 @@ function main() {
 
     if (allFailedTests) {
         observer.observe(allFailedTests, {attributes: true, childList: true, subtree: true, characterData: true});
-    }
-    if (allMutedTests) {
-        observer.observe(allMutedTests, {attributes: true, childList: true, subtree: true, characterData: true});
     }
 
     window.onunload = () => {

@@ -2,3 +2,4 @@
 betterTestReports-server/
 build/target/
 target/
+.DS_STORE
