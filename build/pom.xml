@@ -27,7 +27,7 @@
             <groupId>com.google.code.maven-replacer-plugin</groupId>
             <artifactId>replacer</artifactId>
             <version>1.5.2</version>
-            <executions>                
+            <executions>
                 <execution>
                     <phase>process-sources</phase>
                     <goals>
@@ -51,7 +51,7 @@
                         <token>@VendorURL@</token>
                         <value>${teamcity.betterTestReports.plugin.vendorUrl}</value>
                     </replacement>
-                </replacements>                        
+                </replacements>
             </configuration>
         </plugin>
         <plugin>

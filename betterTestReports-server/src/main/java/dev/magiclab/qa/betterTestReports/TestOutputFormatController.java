@@ -1,5 +1,6 @@
 package dev.magiclab.qa.betterTestReports;
 
+import jetbrains.buildServer.serverSide.BuildStatistics;
 import org.apache.commons.lang3.StringUtils;
 import jetbrains.buildServer.controllers.BaseController;
 import jetbrains.buildServer.serverSide.FailedTestOutputBean;
@@ -13,10 +14,14 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class TestOutputFormatController extends BaseController implements jetbrains.buildServer.serverSide.FailedTestOutputFormatter {
-    private PluginDescriptor myDescriptor;
+import java.util.Objects;
 
-    private String[][] REPLACES = {
+import static jetbrains.buildServer.serverSide.BuildStatisticsOptions.ALL_TESTS_NO_DETAILS;
+
+public class TestOutputFormatController extends BaseController implements jetbrains.buildServer.serverSide.FailedTestOutputFormatter {
+    private final PluginDescriptor myDescriptor;
+
+    private final String[][] REPLACES = {
             {
                 "PREVIEW_CLASS",
                 "better-preview"
@@ -31,10 +36,10 @@ public class TestOutputFormatController extends BaseController implements jetbra
             }
     };
 
-    private String[][] TRANSFORMS = {
+    private final String[][] TRANSFORMS = {
             {
-                    "(https?://(?:[\\w:\\.]+\\@)?(?:\\w[-\\w\\.]+)(?::\\d{1,5})?(?:\\/(?:[\\w#\\/_\\.!=:-]*(?:\\?\\S+)?)?)?)(\\s+)",
-                    "<a href=\"$1\" target=\"_blank\">$1</a>$2"
+                    "(https?://\\S+)(\\s+)",
+                    "<a href='$1' target='_blank'>$1</a>$2"
             },
             {
                     "&gt;&gt;(.+?)&lt;&lt;",
@@ -96,7 +101,7 @@ public class TestOutputFormatController extends BaseController implements jetbra
             String regex = transform[0];
             String test = "";
             String replacement = transform[1];
-            for (String[] toReplaceWith: REPLACES) {
+            for (String[] toReplaceWith : REPLACES) {
                 test = "${" + toReplaceWith[0] + "}";
                 replacement = replacement.replace(test, toReplaceWith[1]);
             }
@@ -107,7 +112,12 @@ public class TestOutputFormatController extends BaseController implements jetbra
 
     @Override
     public String formatTestForWeb(@NotNull SBuild sBuild, int testId, @NotNull FailedTestOutputBean failedTestOutputBean) {
-        return replaceWithRegexRules(failedTestOutputBean.getCombinedOutput());
+        BuildStatistics stat = sBuild.getBuildStatistics(ALL_TESTS_NO_DETAILS);
+        long nameId = Objects.requireNonNull(stat.findTestByTestRunId(testId)).getTest().getTestNameId();
+        String sTestNameId = Long.toString(nameId);
+        String sBuildId = Long.toString(sBuild.getBuildId());
+        String buildTypeId = sBuild.getBuildTypeId();
+        return "<span data-better-report-test-id='" + sTestNameId + "' data-better-report-build-id='" + sBuildId + "' data-better-report-build-type='" + buildTypeId + "'>" + replaceWithRegexRules(failedTestOutputBean.getCombinedOutput()) + "<script>transform_test_info_block('" + sTestNameId + "')</script></span>";
     }
 
     @Override

@@ -6,7 +6,8 @@
 // TODO: add options for preloading (maybe?)
 
 const
-    STACKTRACE_CLASS = 'fullStacktrace';
+    DATA_FIELD = 'data-better-report-test-id',
+    SPARKLINE_CONTAINER = '[role="presentation"], .testDetailsInline';
 
 const
     PREVIEW_CLASS = 'better-preview',
@@ -83,9 +84,10 @@ async function makeRequest(method, url) {
     });
 }
 
-function draw_sparkline() {
+function draw_sparkline(parentNode) {
     const tcEntryPoint = `${teamcity_address}/app/rest/testOccurrences`;
-    const currentBuildId = (/buildId=(\d+)/.exec(window.location.search))[1];
+    const currentBuildId = parentNode.dataset['betterReportBuildId'],
+        currentBuildType = parentNode.dataset['betterReportBuildType'];
 
     function getTestLink(buildId, testId)
     {
@@ -252,33 +254,15 @@ function draw_sparkline() {
         this.globalStat = !this.globalStat;
     }
 
-    const stacktraces = document.querySelectorAll(`.${STACKTRACE_CLASS}:not([data-sparkline])`);
-    let currentBuildType = '',
-        url = (/buildTypeId=(\w+)/.exec(window.location.search));
-    if (url) {
-        currentBuildType = url[1];
-    }
-
-    if (stacktraces.length === 0) {
-        return;
-    }
-
     debug('sparkline');
-    for (let item of stacktraces) {
-        let matches = /fullStacktrace_\d+_([\d-]+)/.exec(item.id);
-        let testId = matches[1];
-        item.dataset.sparkline = testId;
-
-        const parentNode = item.parentNode;
-        const wrapper = parentNode.insertBefore(document.createElement('div'), parentNode.firstChild);
-        wrapper.classList.add('sparkline-wrapper');
-        wrapper.globalStat = currentBuildType ? !CURRENT_BUILDTYPE_AS_DEFAULT : true;
-        wrapper.dataset.testId = testId;
-        wrapper.dataset.buildType = currentBuildType;
-
-        wrapper.onclick = reDrawSpark;
-        wrapper.click();
-    }
+    const container = parentNode.closest(SPARKLINE_CONTAINER);
+    const wrapper = container.insertBefore(document.createElement('div'), container.firstChild);
+    wrapper.classList.add('sparkline-wrapper');
+    wrapper.globalStat = currentBuildType ? !CURRENT_BUILDTYPE_AS_DEFAULT : true;
+    wrapper.dataset.testId = parentNode.dataset['betterReportTestId'];
+    wrapper.dataset.buildType = currentBuildType;
+    wrapper.onclick = reDrawSpark;
+    wrapper.click();
 }
 
 function get_media_type(element) {
@@ -397,39 +381,9 @@ function open_in_intellij(event) {
     event.preventDefault();
 }
 
-function loader(parent = null) {
-    let loader;
-    if (window.betterJSLoader) {
-        debug('loader exists');
-        loader = window.betterJSLoader;
-    } else {
-        debug('to create loader');
-        loader = document.createElement('div');
-        // standard teamcity loader
-        loader.classList.add('ring-loader-inline');
-        if (parent === null) {
-            loader.id = 'betterjs-loader-fixed';
-            parent = document.body;
-        }
-        // let animation = document.createElement('div');
-        // animation.classList.add('cssload-loader');
-        // loader.appendChild(animation);
-        parent.appendChild(loader);
-        window.betterJSLoader = loader;
-    }
-}
-
-function hide_loader() {
-    if (window.betterJSLoader) {
-        let loader = window.betterJSLoader;
-        loader.parentNode.removeChild(loader);
-        window.betterJSLoader = false;
-    }
-}
-
-function transform_mutated_nodes() {
-    const previews = document.querySelectorAll(`.${STACKTRACE_CLASS} a:not(.${PREVIEW_CLASS})`);
-    // console.debug('better.js', `${previews.length} elements to be transformed`);
+function transform_test_info_block(testId) {
+    const testInfoBlock = document.querySelector(`[data-better-report-test-id="${testId}"]`);
+    const previews = testInfoBlock.querySelectorAll(`a:not(.${PREVIEW_CLASS})`);
     Array.from(previews).forEach((item) => {
         if (typeof item.previewtype === 'undefined') {
             const href = item.getAttribute('href');
@@ -447,43 +401,13 @@ function transform_mutated_nodes() {
         item.classList.add(PREVIEW_CLASS);
     });
 
-
-    Array.from(document.getElementsByTagName('code')).forEach((item) => {
+    Array.from(testInfoBlock.getElementsByTagName('code')).forEach((item) => {
         item.addEventListener('dblclick', select_code, false)
     });
 
-    Array.from(document.getElementsByClassName(INTELLIJ_LINK_CLASS)).forEach((item) => {
+    Array.from(testInfoBlock.getElementsByClassName(INTELLIJ_LINK_CLASS)).forEach((item) => {
         item.addEventListener('click', open_in_intellij, false)
     });
 
-    draw_sparkline();
+    draw_sparkline(testInfoBlock);
 }
-
-function main() {
-    const allFailedTests = document.getElementById('buildResults');
-    let observer = new MutationObserver((mutations) => {
-                loader();
-                mutations.forEach((mutation) => {
-                    transform_mutated_nodes();
-                });
-                window.setTimeout(hide_loader, 500);
-            });
-
-    if (allFailedTests) {
-        observer.observe(allFailedTests, {attributes: true, childList: true, subtree: true, characterData: true});
-    }
-
-    window.onunload = () => {
-        observer.disconnect();
-    };
-}
-
-(function () {
-    if (typeof window !== "object" || window.hasBetterReports) {
-        return;
-    }
-    window.hasBetterReports = true;
-    window.addEventListener('load', (e) => {
-        main();
-    });
-})();

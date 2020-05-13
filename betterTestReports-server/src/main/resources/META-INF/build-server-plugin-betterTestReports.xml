@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
        default-autowire="constructor">
     <bean init-method="register" class="dev.magiclab.qa.betterTestReports.ExtendedViewLogTab">
-        <property name="placeId" value="BUILD_RESULTS_FRAGMENT"/>
+        <property name="placeId" value="BUILD_SUMMARY"/>
     </bean>
-    <bean class="dev.magiclab.qa.betterTestReports.TestOutputFormatController"></bean>
+    <bean class="dev.magiclab.qa.betterTestReports.TestOutputFormatController"/>
 </beans>
