@@ -2,14 +2,14 @@
 <teamcity-plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:schemas-jetbrains-com:teamcity-plugin-v1-xml">
   <info>
     <name>betterTestReports</name>
-    <display-name>Better php and calabash reports</display-name>
-    <version>0.5.1-@Version@</version>
+    <display-name>Better PHP and calabash reports</display-name>
+    <version>@Version@</version>
     <description>A slightly improved display of your tests</description>
     <download-url>Plugin download URL</download-url>
     <email>a.soldatkin@team.bumble.com</email>
     <vendor>
-      <name>Bumble</name>
-      <url>https://bumble.com</url>
+      <name>@VendorName@</name>
+      <url>@VendorURL@</url>
     </vendor>
   </info>
   <deployment use-separate-classloader="true"/>

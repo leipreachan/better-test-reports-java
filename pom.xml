@@ -13,6 +13,7 @@
         </dependency>
     </dependencies>
   <properties>
+      <majorVersion>0.5.2</majorVersion>
       <teamcity-version>2021.2</teamcity-version>
       <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
       <buildNumber>${project.version} build ${maven.build.timestamp}</buildNumber>
