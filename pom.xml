@@ -13,7 +13,7 @@
         </dependency>
     </dependencies>
   <properties>
-      <teamcity-version>2019.2</teamcity-version>
+      <teamcity-version>2021.2</teamcity-version>
       <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
       <buildNumber>${project.version} build ${maven.build.timestamp}</buildNumber>
   </properties>
@@ -53,7 +53,7 @@
           <plugin>
               <groupId>org.jetbrains.teamcity</groupId>
               <artifactId>teamcity-sdk-maven-plugin</artifactId>
-              <version>0.4</version>
+              <version>0.4.1</version>
               <configuration>
                   <!-- <teamcityDir>/path/to/tc/distro</teamcityDir> -->
               </configuration>
@@ -64,7 +64,7 @@
               <plugin>
                   <groupId>org.jetbrains.teamcity</groupId>
                   <artifactId>teamcity-sdk-maven-plugin</artifactId>
-                  <version>0.4</version>
+                  <version>0.4.1</version>
                   <configuration>
                       <!-- <teamcityDir>/path/to/tc/distro</teamcityDir> -->
                   </configuration>

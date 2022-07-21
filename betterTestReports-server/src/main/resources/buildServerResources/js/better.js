@@ -28,7 +28,7 @@ const
 let
     overview_map = {},
     buildlog_map = {},
-    teamcity_address = `${window.location.protocol}//${window.location.hostname}:${window.location.port}`;
+    teamcity_address = TeamCityAPI.utils.resolveRelativeURL('');
 
 const
     SPARKLINE_POINTS = 200;
@@ -58,34 +58,8 @@ const attrs = (node, attributes) => {
     return node;
 };
 
-async function makeRequest(method, url) {
-    debug(`fetch ${url}`);
-
-    return new Promise(function (resolve, reject) {
-        let xhr = new XMLHttpRequest();
-        xhr.open(method, url);
-        xhr.onload = function () {
-            if (this.status >= 200 && this.status < 300) {
-                resolve(xhr);
-            } else {
-                reject({
-                    status: this.status,
-                    statusText: xhr.statusText
-                });
-            }
-        };
-        xhr.onerror = function () {
-            reject({
-                status: this.status,
-                statusText: xhr.statusText
-            });
-        };
-        xhr.send();
-    });
-}
-
 function draw_sparkline(parentNode) {
-    const tcEntryPoint = `${teamcity_address}/app/rest/testOccurrences`;
+    const tcEntryPoint = `app/rest/testOccurrences`;
     const currentBuildId = parentNode.dataset['betterReportBuildId'],
         currentBuildType = parentNode.dataset['betterReportBuildType'];
 
@@ -156,23 +130,22 @@ function draw_sparkline(parentNode) {
     }
 
     async function retrieveTestResults(fetchUrl) {
-        let result = '';
+        let result = {'testOccurrence':[]};
         try {
-            const response = await makeRequest('GET', fetchUrl);
-            result = response.responseXML;
+            result = await TeamCityAPI.utils.requestJSON(fetchUrl);
         } catch (e) {
         }
         return result;
     }
 
-    function addRectangles(xmlTestResult, currentBuildId, svgNode, title = '') {
-        const step = 5, width = 5, testResults = Array.from(xmlTestResult.getElementsByTagName('testOccurrence'));
+    function addRectangles(jsonTestResult, currentBuildId, svgNode, title = '') {
+        const step = 5, width = 5, testResults = jsonTestResult['testOccurrence'];
         let x = 0, success = 0, titleBuildType;
         for (let item of testResults) {
-            const value = item.hasAttribute('status') ? item.attributes.status.nodeValue : '',
-                duration = item.hasAttribute('duration') ? item.attributes.duration.nodeValue : false,
-                buildInfo = item.getElementsByTagName('build')[0],
-                buildTypeName = item.getElementsByTagName('buildType')[0].attributes.name.nodeValue,
+            const value = item['status'] || '',
+                duration = item['duration'] || false,
+                buildInfo = item['build'] || [],
+                buildTypeName = buildInfo['buildType']['name'] || '',
                 rect = attrs(document.createElementNS('http://www.w3.org/2000/svg', 'rect'), {x, width});
             switch (value) {
                 case 'SUCCESS':
@@ -191,8 +164,8 @@ function draw_sparkline(parentNode) {
                 rect.classList.add('current');
             }
             rect.buildId = buildInfo.id;
-            const buildDate = item.getElementsByTagName('startDate')[0].textContent,
-                buildBranchName = buildInfo.hasAttribute('branchName') ? buildInfo.attributes.branchName.nodeValue : '<empty>',
+            const buildDate = buildInfo['startDate'],
+                buildBranchName = buildInfo['branchName'] || '<empty>',
                 t = /(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/.exec(buildDate);
             let duration_string = '';
             if (duration) {

@@ -90,7 +90,7 @@ public class TestOutputFormatController extends BaseController implements jetbra
 
     @Nullable
     @Override
-    protected ModelAndView doHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
+    protected ModelAndView doHandle(@NotNull HttpServletRequest httpServletRequest, @NotNull HttpServletResponse httpServletResponse) throws Exception {
         return new ModelAndView(myDescriptor.getPluginResourcesPath("ExtendedViewLog.jsp"));
     }
 

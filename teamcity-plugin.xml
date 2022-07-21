@@ -3,7 +3,7 @@
   <info>
     <name>betterTestReports</name>
     <display-name>Better php and calabash reports</display-name>
-    <version>0.4.2-@Version@</version>
+    <version>0.5.1-@Version@</version>
     <description>A slightly improved display of your tests</description>
     <download-url>Plugin download URL</download-url>
     <email>a.soldatkin@team.bumble.com</email>
