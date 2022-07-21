@@ -6,3 +6,11 @@ I'll get to know how to make it better (sooner or later)
 
 
 ![Java CI with Maven](https://github.com/leipreachan/better-test-reports-java/workflows/Java%20CI%20with%20Maven/badge.svg)
+
+
+To build the plugin use:
+```
+mvn compile package
+```
+
+and look for a new zip file in `better-test-reports-java/target/` directory
